@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     }
 
-    function uvIndex(latitude, longitude) {
+    function uvIndex (latitude, longitude) {
         var key = "99554349f5c7a971498fc2a3291419d9"
         var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + latitude + "&lon=" + longitude
         $.ajax({
@@ -56,7 +56,7 @@ $(document).ready(function () {
             // This clear would clear everything and not allow anything to appear after
             // $("#fivedayweather-view").empty();
             $("#fivedayweather-view").removeClass("hide");
-
+            
             console.log(response)
             var dayOne = $("#1");
             dayOne.html("<h4>Day One:</h4>")
@@ -101,7 +101,8 @@ $(document).ready(function () {
         $("#currentweather-view").empty();
         var inputCity = $(".form-control").val().trim();
         var button = $("<button>");
-        button.text("city", inputCity);
+        button.addClass("searchHistory");
+        button.text(inputCity);
         $("#searches-view").prepend(button);
         currentConditions(inputCity);
         $(".form-control").val("");
